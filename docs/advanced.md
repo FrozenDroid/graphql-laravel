@@ -339,11 +339,13 @@ class UserType extends GraphQLType
             ],
             'profile' => [
                 'type' => GraphQL::type('Profile'),
+		'selectable' => false,
                 'description' => 'The user profile',
             ],
             'posts' => [
                 'type' => Type::listOf(GraphQL::type('Post')),
                 'description' => 'The user posts',
+		'selectable' => false,
                 // Can also be defined as a string
                 'always' => ['title', 'body'],
             ]
